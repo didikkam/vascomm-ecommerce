@@ -3,6 +3,8 @@
 @section('title', 'Ecommerce')
 
 @push('after-styles')
+    <link rel="stylesheet" href="{{ asset('assets/plugins/owlcarousel/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/owlcarousel/assets/owl.theme.default.min.css') }}">
 @endpush
 
 @section('content')
@@ -42,24 +44,19 @@
             <div class="col-12">
                 <h5 class="section-title">Terbaru</h5>
             </div>
-            <div class="col-12 d-flex">
-                <div class="card card-product" style="width: 12rem;">
-                    <div class="card-body">
-                        <div class="text-center mb-3">
-                            <img src="{{ asset('assets/images/product.png') }}" class="card-img-top" alt="Produk">
+            <div class="col-12 mt-3">
+                <div class="owl-carousel">
+                    @for ($i = 0; $i <= 10; $i++)
+                        <div class="card card-product" style="width: 12rem;">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <img src="{{ asset('assets/images/product.png') }}" class="card-img-top" alt="Produk">
+                                </div>
+                                <h5 class="card-title">Card title {{ $i }}</h5>
+                                <h5 class="card-price">IDR. 1.000.000</h5>
+                            </div>
                         </div>
-                        <h5 class="card-title">Card title</h5>
-                        <h5 class="card-price">IDR. 1.000.000</h5>
-                    </div>
-                </div>
-                <div class="card card-product" style="width: 12rem;">
-                    <div class="card-body">
-                        <div class="text-center mb-3">
-                            <img src="{{ asset('assets/images/product2.png') }}" class="card-img-top" alt="Produk">
-                        </div>
-                        <h5 class="card-title">Card title</h5>
-                        <h5 class="card-price">IDR. 1.000.000</h5>
-                    </div>
+                    @endfor
                 </div>
             </div>
         </div>
@@ -67,9 +64,43 @@
             <div class="col-12">
                 <h5 class="section-title">Produk Tersedia</h5>
             </div>
+            <div class="col-12 mt-3">
+                <div class="row">
+                    @for ($i = 0; $i <= 10; $i++)
+                        <div class="col-md-2 col-sm-3 mb-3">
+                            <div class="card card-product" style="width: 12rem;">
+                                <div class="card-body">
+                                    <div class="text-center mb-3">
+                                        <img src="{{ asset('assets/images/product.png') }}" class="card-img-top"
+                                            alt="Produk">
+                                    </div>
+                                    <h5 class="card-title">Card title {{ $i }}</h5>
+                                    <h5 class="card-price">IDR. 1.000.000</h5>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-outline-primary">Lihat lebih banyak</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
 
 @push('after-scripts')
+    <script type="text/javascript" charset="utf8" src="{{ asset('assets/plugins/owlcarousel/owl.carousel.min.js') }}">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                items: 6,
+                loop: true,
+                // nav: true,
+            });
+        });
+    </script>
 @endpush
