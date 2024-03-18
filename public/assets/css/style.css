@@ -1,0 +1,39 @@
+body {
+    color: #1F1C17;
+    font-family: 'Playfair Display', serif;
+}
+
+.btn {
+    border-radius: 0 !important;
+}
+
+.btn-primary {
+    background-color: #41A0E4 !important;
+    border-color: #3793d4 !important;
+}
+
+.btn-outline-primary {
+    color: #41A0E4 !important;
+    border-color: #3793d4 !important;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-product img {
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-product .card-title {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.card-product .card-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #41A0E4;
+}
