@@ -74,4 +74,10 @@ class AuthController extends Controller
             return getThrowMessage($th);
         }
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('index');
+    }
 }

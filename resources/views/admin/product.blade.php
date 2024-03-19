@@ -157,7 +157,7 @@
                 contentType: false,
                 processData: false,
                 error: function(response) {
-                    var errors = $.parseJSON(data.responseText);
+                    var errors = $.parseJSON(response.responseText);
                     toastr.error(errors.message);
                 },
                 success: function(response) {
@@ -244,7 +244,7 @@
                             });
                             toastr.error(data.message);
                         } else {
-                            var errors = $.parseJSON(data.responseText);
+                            var errors = $.parseJSON(response.responseText);
                             toastr.error(errors.message);
                         }
                     },

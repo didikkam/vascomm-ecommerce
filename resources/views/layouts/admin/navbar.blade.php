@@ -62,7 +62,9 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li class="px-5 py-3 text-center">
-                            <a href="#" style="text-decoration: none;" class="text-danger"><img src="{{ asset('assets/images/power.png') }}" alt="Logo" height="20"> Keluar</a>
+                            <a href="{{ route('logout') }}" style="text-decoration: none;" class="text-danger"><img
+                                    src="{{ asset('assets/images/power.png') }}" alt="Logo" height="20">
+                                Keluar</a>
                         </li>
                     </ul>
                 </li>

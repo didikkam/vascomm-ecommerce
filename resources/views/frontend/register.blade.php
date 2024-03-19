@@ -88,7 +88,7 @@
                             });
                             toastr.error(data.message);
                         } else {
-                            var errors = $.parseJSON(data.responseText);
+                            var errors = $.parseJSON(response.responseText);
                             toastr.error(errors.message);
                         }
                     },
