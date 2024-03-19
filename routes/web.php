@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +27,12 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+    Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
+        Route::get('/', [UserController::class, 'index'])->name('index');
+    });
+
+    Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
+        Route::get('/', [ProductController::class, 'index'])->name('index');
+    });
 });

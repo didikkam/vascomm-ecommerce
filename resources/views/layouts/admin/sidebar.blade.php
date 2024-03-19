@@ -27,21 +27,21 @@
     <div class="d-flex flex-column align-items-center align-items-sm-start pt-2 text-white min-vh-100">
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu"
             style="">
-            <li class="nav-item active">
-                <a href="#" class="nav-link align-middle">
-                    <img src="{{ asset('assets/images/ic_dashboard_active.png') }}" alt="Logo" height="25">
+            <li class="nav-item {{ Route::is('admin.index') ? 'active' : '' }}">
+                <a href="{{ route('admin.index') }}" class="nav-link align-middle">
+                    <img src="{{ Route::is('admin.index') ? asset('assets/images/ic_dashboard_active.png') : asset('assets/images/ic_dashboard.png') }}" alt="Logo" height="25">
                     <span class="ms-1 d-none d-sm-inline">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link align-middle">
-                    <img src="{{ asset('assets/images/ic_user.png') }}" alt="Logo" height="25">
+            <li class="nav-item {{ Route::is('admin.users.*') ? 'active' : '' }}">
+                <a href="{{ route('admin.users.index') }}" class="nav-link align-middle">
+                    <img src="{{ Route::is('admin.users.*') ? asset('assets/images/ic_user_active.png') : asset('assets/images/ic_user.png') }}" alt="Logo" height="25">
                     <span class="ms-1 d-none d-sm-inline">Manajemen User</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link align-middle">
-                    <img src="{{ asset('assets/images/ic_product.png') }}" alt="Logo" height="25">
+            <li class="nav-item {{ Route::is('admin.products.*') ? 'active' : '' }}">
+                <a href="{{ route('admin.products.index') }}" class="nav-link align-middle">
+                    <img src="{{ Route::is('admin.products.*') ? asset('assets/images/ic_product_active.png') : asset('assets/images/ic_product.png') }}" alt="Logo" height="25">
                     <span class="ms-1 d-none d-sm-inline">Manajemen Produk</span>
                 </a>
             </li>

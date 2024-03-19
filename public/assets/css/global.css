@@ -2,6 +2,18 @@
     border-radius: 0 !important;
 }
 
+.bg-success {
+    background-color: #479F77 !important;
+}
+
+.bg-danger {
+    background-color: #D83A56 !important;
+}
+
+.bg-warning {
+    background-color: #EC9024 !important;
+}
+
 .bg-primary {
     background-color: #41A0E4 !important;
 }
@@ -26,4 +38,8 @@
 .btn-outline-gray {
     color: #E4E4E4 !important;
     border-color: #E4E4E4 !important;
+}
+
+.pointer {
+    cursor: pointer;
 }
