@@ -42,3 +42,8 @@ Lakukan
 ```
 php artisan storage:link
 ```
+User Login
+```
+email : admin@admin.com
+password : secret123
+```

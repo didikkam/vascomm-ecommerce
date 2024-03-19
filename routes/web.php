@@ -23,9 +23,11 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'doLogin'])->name('doLogin');
+Route::post('/register', [AuthController::class, 'doRegister'])->name('doRegister');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
     Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
