@@ -46,17 +46,17 @@
             </div>
             <div class="col-12 mt-3">
                 <div class="owl-carousel">
-                    @for ($i = 0; $i <= 10; $i++)
+                    @foreach ($productLatests as $item)
                         <div class="card card-product" style="width: 12rem;">
                             <div class="card-body">
                                 <div class="text-center mb-3">
-                                    <img src="{{ asset('assets/images/product.png') }}" class="card-img-top" alt="Produk">
+                                    <img src="{{ $item->image_formated }}" class="card-img-top" alt="Produk">
                                 </div>
-                                <h5 class="card-title">Card title {{ $i }}</h5>
-                                <h5 class="card-price">IDR. 1.000.000</h5>
+                                <h5 class="card-title">{{ $item->name }}</h5>
+                                <h5 class="card-price">IDR. {{ number_format($item->price, 0, ',', '.') }}</h5>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -66,20 +66,19 @@
             </div>
             <div class="col-12 mt-3">
                 <div class="row">
-                    @for ($i = 0; $i <= 10; $i++)
+                    @foreach ($products as $item)
                         <div class="col-md-2 col-sm-3 mb-3">
                             <div class="card card-product" style="width: 12rem;">
                                 <div class="card-body">
                                     <div class="text-center mb-3">
-                                        <img src="{{ asset('assets/images/product.png') }}" class="card-img-top"
-                                            alt="Produk">
+                                        <img src="{{ $item->image_formated }}" class="card-img-top" alt="Produk">
                                     </div>
-                                    <h5 class="card-title">Card title {{ $i }}</h5>
-                                    <h5 class="card-price">IDR. 1.000.000</h5>
+                                    <h5 class="card-title">{{ $item->name }}</h5>
+                                    <h5 class="card-price">IDR. {{ number_format($item->price, 0, ',', '.') }}</h5>
                                 </div>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12 text-center">

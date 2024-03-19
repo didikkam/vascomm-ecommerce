@@ -38,3 +38,7 @@ Lakukan migrasi
 php artisan migrate
 php artisan db:seed
 ```
+Lakukan
+```
+php artisan storage:link
+```

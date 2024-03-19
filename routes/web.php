@@ -33,6 +33,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     });
 
     Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
+        Route::get('/datatable', [ProductController::class, 'datatable'])->name('datatable');
         Route::get('/', [ProductController::class, 'index'])->name('index');
+        Route::post('/', [ProductController::class, 'store'])->name('store');
+        Route::get('/{id}', [ProductController::class, 'show'])->name('show');
     });
 });

@@ -33,6 +33,7 @@ input {
     font-size: 14px;
     font-weight: 700;
     color: #41A0E4;
+    font-family: 'SF Pro Display', serif !important;
 }
 
 .footer {
