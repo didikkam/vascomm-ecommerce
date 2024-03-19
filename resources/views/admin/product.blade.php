@@ -147,6 +147,7 @@
         ];
         $(document).on('click', '.btnEdit', function() {
             var id = $(this).data('id');
+            $("#dataModalLabel").html('Edit Produk');
             $("#dataModal").modal('show');
             var link = "{{ route('admin.products.index') }}/" + id;
             $.ajax({
@@ -187,6 +188,10 @@
                 "columns": columns,
             });
             $("#btnCreate").click(function() {
+                $('#id').val("");
+                $('#name').val("");
+                $('#price').val("");
+                $("#dataModalLabel").html('Tambah Produk');
                 $("#dataModal").modal('show');
             });
 
@@ -245,10 +250,12 @@
                     },
                     success: function(data) {
                         toastr.info(data.message);
-                        $('#simpan').attr('disabled', false);
                         $("#dataModal").modal('hide');
                         tabel.ajax.reload();
                     },
+                    complete: function() {
+                        $('#simpan').attr('disabled', false);
+                    }
                 });
             });
         });
