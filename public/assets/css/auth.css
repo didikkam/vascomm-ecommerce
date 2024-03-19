@@ -1,0 +1,17 @@
+body,
+input,
+button {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.kiri img {
+    object-fit: cover;
+}
+
+.form-label {
+    color: #9B9B9B;
+}
+
+.card {
+    border: 0;
+}

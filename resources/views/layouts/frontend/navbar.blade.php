@@ -12,8 +12,8 @@
                 <input class="form-control" type="search" placeholder="Cari parfum kesukaanmu">
             </div>
             <div class="d-flex ms-auto">
-                <button class="btn btn-outline-primary me-3">MASUK</button>
-                <button class="btn btn-primary">DAFTAR</button>
+                <a href="{{ route('login') }}" class="btn btn-outline-primary me-3">MASUK</a>
+                <a href="{{ route('register') }}" class="btn btn-primary">DAFTAR</a>
             </div>
         </div>
     </div>

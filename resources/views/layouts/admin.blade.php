@@ -15,14 +15,22 @@
         rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/sidebar.css') }}">
     @stack('after-styles')
 </head>
 
 <body>
-    @include('layouts.frontend.navbar')
-    @yield('content')
-    @include('layouts.frontend.footer')
+    @include('layouts.admin.navbar')
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @include('layouts.admin.sidebar')
+            <div class="col py-3">
+                @yield('content')
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
